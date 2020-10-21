@@ -8,11 +8,11 @@ class AddTodo extends React.Component {
     this.state = { input: "" };
   }
 
-  updateInput = input => {
+  _updateInput = input => {
     this.setState({ input });
   };
 
-  handleAddTodo = () => {
+  _handleAddTodo = () => {
     this.props.addTodo(this.state.input);
     this.setState({ input: "" });
   };
@@ -21,10 +21,10 @@ class AddTodo extends React.Component {
     return (
       <div>
         <input
-          onChange={e => this.updateInput(e.target.value)}
+          onChange={e => this._updateInput(e.target.value)}
           value={this.state.input}
         />
-        <button className="add-todo" onClick={this.handleAddTodo}>
+        <button className="add-todo" onClick={this._handleAddTodo}>
           Add Todo
         </button>
       </div>
@@ -32,4 +32,4 @@ class AddTodo extends React.Component {
   }
 }
 
-export default AddTodo;
+export default connect(null, { addTodo })(AddTodo);

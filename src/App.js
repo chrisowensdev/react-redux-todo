@@ -6,7 +6,7 @@ import VisibilityFilters from './components/VisibilityFilters';
 function App() {
     return (
         <div className='App'>
-            <h1>Todo List - WTIH REDUX!!</h1>
+            <h1>Todo List - WITH REDUX!!</h1>
             <AddTodo />
             <TodoList />
             <VisibilityFilters />
